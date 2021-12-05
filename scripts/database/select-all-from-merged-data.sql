@@ -1,0 +1,1 @@
+SELECT * FROM ml.merged_data;

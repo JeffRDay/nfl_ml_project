@@ -1,0 +1,1 @@
+SELECT * FROM ml.game_wr_and_te
