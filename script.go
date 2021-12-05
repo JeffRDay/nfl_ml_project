@@ -18,6 +18,9 @@ var (
 	careerDlineData     = [][]string{}
 	careerRushingCsv    = "data/Career_Stats_Rushing.csv"
 	careerRushingData   = [][]string{}
+
+	// key = year, Value = {pid, team}
+	careerRushingLookup = make(map[string]map[string]string)
 	gameDlineCsv        = "data/Game_Logs_Defensive_Lineman.csv"
 	gameDlineData       = [][]string{}
 	gameOlineCsv        = "data/Game_Logs_Offensive_Line.csv"
@@ -116,7 +119,7 @@ func main() {
 		w.Done()
 	}()
 	w.Wait()
-	log.Println(gameRbData[0])
+	log.Printf("Sample ::: Career Rushing - %s\n", careerRushingData[1])
 
 	log.Println("all csvs are in dude - writing merged data csv")
 	var formattedData [][]string
@@ -124,6 +127,8 @@ func main() {
 	formattedData = append(formattedData, mergedData...)
 
 	WriteCsv("merged-data.csv", formattedData)
+
+	log.Printf("Data is merged and formatted ::: Total Records: %v, Total Features: %v", len(formattedData), len(formattedData[0]))
 
 	elapsed := time.Since(start)
 	log.Println("completed execution in " + elapsed.String())
@@ -171,10 +176,10 @@ func removeHeaders(slice [][]string, s int) [][]string {
 }
 
 func ConvertNan(csv [][]string) {
-	for _, row := range csv {
-		for _, cell := range row {
+	for r, row := range csv {
+		for c, cell := range row {
 			if cell == "--" {
-				cell = "NaN"
+				csv[r][c] = "NaN"
 			}
 		}
 	}
