@@ -32,7 +32,7 @@ def main():
         level=logging.INFO,
         format="%(levelname)s ::: %(message)s")
 
-    logging.info("starting model.py")
+    logging.info("starting mlp.py")
     logging.info("params LIMITER=%s, PATH=%s, LAYERS=%s, LAYER_SIZE=%s", args.LIMITER, args.PATH, args.LAYERS, args.LAYER_SIZE)
     start = time.time()
 
@@ -43,7 +43,7 @@ def main():
         len(data_frame.columns))
 
     size = len(data_frame) // args.LIMITER
-    logging.info("will use %s records for MLP Classifier", size)
+    logging.info("will use %s records for MLP Regressor", size)
 
     subset = data_frame.iloc[:size,]
     working_subset = clean_copy(subset)
@@ -53,20 +53,20 @@ def main():
     predictors = predictors.to_numpy()
     target = target.to_numpy()
 
-    logging.warning("starting MLP Classifier - good luck.")
+    logging.warning("starting MLP Regressor - good luck.")
     results = model(
         "MLP Regression using Relu: " +str(args.LAYERS)+" hidden layers with "+str(args.LAYER_SIZE)+
         " nodes per layer",
         (args.LAYERS,args.LAYER_SIZE), "relu", predictors, target)
 
-    logging.info("MLP Classifier completed, results:")
+    logging.info("MLP Regressor completed, results:")
     logging.info(results)
 
     logging.info("updating reports.csv")
     save("../../runs/report.csv", results)
 
     end = time.time()
-    print("executed model.py in :", end-start)
+    print("executed mlp.py in :", end-start)
 
 def read_csv(path):
     ''' read_csv reads csv from provided path and return dataframe '''

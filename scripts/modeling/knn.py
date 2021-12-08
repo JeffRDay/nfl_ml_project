@@ -28,7 +28,7 @@ def main():
         level=logging.INFO,
         format="%(levelname)s ::: %(message)s")
 
-    logging.info("starting model.py")
+    logging.info("starting knn.py")
     logging.info("params LIMITER=%s, K_VALUE=%s, PATH=%s", args.LIMITER, args.K_VALUE, args.PATH)
     start = time.time()
 
@@ -61,7 +61,7 @@ def main():
     save("../../runs/report.csv", results)
 
     end = time.time()
-    print("executed model.py in :", end-start)
+    print("executed knn.py in :", end-start)
 
 def read_csv(path):
     ''' read_csv reads csv from provided path and return dataframe '''

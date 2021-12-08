@@ -29,7 +29,7 @@ def main():
         level=logging.INFO,
         format="%(levelname)s ::: %(message)s")
 
-    logging.info("starting model.py")
+    logging.info("starting forest.py")
     logging.info("params LIMITER=%s, PATH=%s, ESTIMATORS=%s", args.LIMITER, args.PATH, args.ESTIMATORS)
     start = time.time()
 
@@ -62,7 +62,7 @@ def main():
     save("../../runs/report.csv", results)
 
     end = time.time()
-    print("executed model.py in :", end-start)
+    print("executed forest.py in :", end-start)
 
 def read_csv(path):
     ''' read_csv reads csv from provided path and return dataframe '''
