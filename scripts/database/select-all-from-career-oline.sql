@@ -1,1 +1,0 @@
-SELECT * FROM ml.career_oline;
