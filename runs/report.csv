@@ -1,1 +1,43 @@
 description,rmse,rmse_variance,mse,mse_variance,r2,r2_variance,num_records_analyzed,time
+"KNN Regressor, where K = 5",3.1724,1.2740,11.6872,8.1495,0.6389,0.2378,100,12/08/21 12:16:15
+"KNN Regressor, where K = 5",3.0326,1.0587,10.3175,5.6117,0.6255,0.2231,133,12/08/21 12:16:17
+"KNN Regressor, where K = 5",2.9796,0.7419,9.4286,4.4576,0.7005,0.1141,200,12/08/21 12:16:19
+"Random Forest Regression, where n_estimators=150",2.4317,0.7968,6.5482,3.5686,0.7976,0.0818,100,12/08/21 12:18:30
+"KNN Regressor, where K = 4",3.0192,1.2816,10.7581,7.9238,0.6661,0.2437,100,12/08/21 12:18:32
+Multiple Linear Regression,0.4911,0.1605,0.2670,0.1651,0.9892,0.0100,100,12/08/21 12:18:34
+Decision Tree Regression,3.0541,0.9177,10.1700,6.6803,0.6583,0.1320,100,12/08/21 12:18:35
+MLP Regression using Relu: 20 hidden layers with 60 nodes per layer,0.5560,0.4859,6.1951,3.9983,0.8039,0.0962,100,12/08/21 12:18:39
+"Random Forest Regression, where n_estimators=150",2.3362,0.8788,6.2301,3.1262,0.7846,0.1272,133,12/08/21 12:18:42
+"KNN Regressor, where K = 4",3.0047,1.0354,10.1003,5.0668,0.6380,0.2128,133,12/08/21 12:18:43
+Multiple Linear Regression,0.4900,0.4852,0.4755,0.7973,0.9873,0.0188,133,12/08/21 12:18:45
+Decision Tree Regression,2.9745,1.4172,10.8561,7.1939,0.5937,0.3539,133,12/08/21 12:18:47
+MLP Regression using Relu: 20 hidden layers with 60 nodes per layer,0.3430,0.4996,5.8056,4.1032,0.8042,0.0894,133,12/08/21 12:18:50
+"Random Forest Regression, where n_estimators=150",2.5327,0.8133,7.0758,3.7951,0.7761,0.0978,100,12/08/21 13:19:13
+"KNN Regressor, where K = 4",3.0192,1.2816,10.7581,7.9238,0.6661,0.2437,100,12/08/21 13:19:15
+Multiple Linear Regression,0.4911,0.1605,0.2670,0.1651,0.9892,0.0100,100,12/08/21 13:19:17
+Decision Tree Regression,2.9413,0.5991,9.0100,3.7278,0.6905,0.0834,100,12/08/21 13:19:19
+MLP Regression using Relu: 20 hidden layers with 60 nodes per layer,0.5560,0.4859,6.1951,3.9983,0.8039,0.0962,100,12/08/21 13:19:22
+"Random Forest Regression, where n_estimators=150",2.3702,0.9743,6.5670,3.2789,0.7760,0.1392,133,12/08/21 13:19:24
+"KNN Regressor, where K = 4",3.0047,1.0354,10.1003,5.0668,0.6380,0.2128,133,12/08/21 13:19:26
+Multiple Linear Regression,0.4900,0.4852,0.4755,0.7973,0.9873,0.0188,133,12/08/21 13:19:28
+Decision Tree Regression,3.0481,1.0116,10.3140,5.6620,0.6191,0.2122,133,12/08/21 13:19:30
+MLP Regression using Relu: 20 hidden layers with 60 nodes per layer,0.3430,0.4996,5.8056,4.1032,0.8042,0.0894,133,12/08/21 13:19:34
+"KNN Regressor, where K = 4",3.0192,1.2816,10.7581,7.9238,0.6661,0.2437,100,12/08/21 13:27:43
+Multiple Linear Regression,0.4911,0.1605,0.2670,0.1651,0.9892,0.0100,100,12/08/21 13:27:44
+Decision Tree Regression,2.7573,0.4768,7.8300,2.7944,0.7078,0.1330,100,12/08/21 13:27:46
+MLP Regression using Relu: 20 hidden layers with 60 nodes per layer,0.5560,0.4859,6.1951,3.9983,0.8039,0.0962,100,12/08/21 13:27:49
+"Random Forest Regression, where n_estimators=150",2.3639,0.9279,6.4493,3.1475,0.7794,0.1311,133,12/08/21 13:27:52
+"KNN Regressor, where K = 4",3.0047,1.0354,10.1003,5.0668,0.6380,0.2128,133,12/08/21 13:27:54
+Multiple Linear Regression,0.4900,0.4852,0.4755,0.7973,0.9873,0.0188,133,12/08/21 13:27:56
+Decision Tree Regression,2.9162,1.6748,11.3091,7.7305,0.5824,0.3780,133,12/08/21 13:27:58
+MLP Regression using Relu: 20 hidden layers with 60 nodes per layer,0.3430,0.4996,5.8056,4.1032,0.8042,0.0894,133,12/08/21 13:28:01
+"Random Forest Regression, where n_estimators=150",2.4872,0.8349,6.8830,3.6936,0.7844,0.0967,100,12/08/21 13:30:30
+"KNN Regressor, where K = 4",3.0192,1.2816,10.7581,7.9238,0.6661,0.2437,100,12/08/21 13:30:32
+Multiple Linear Regression,0.4911,0.1605,0.2670,0.1651,0.9892,0.0100,100,12/08/21 13:30:35
+Decision Tree Regression,3.0822,0.3604,9.6300,2.1565,0.6415,0.1337,100,12/08/21 13:30:37
+MLP Regression using Relu: 20 hidden layers with 60 nodes per layer,0.5560,0.4859,6.1951,3.9983,0.8039,0.0962,100,12/08/21 13:30:41
+"Random Forest Regression, where n_estimators=150",2.3307,0.9059,6.2530,3.1375,0.7798,0.1468,133,12/08/21 13:30:44
+"KNN Regressor, where K = 4",3.0047,1.0354,10.1003,5.0668,0.6380,0.2128,133,12/08/21 13:30:46
+Multiple Linear Regression,0.4900,0.4852,0.4755,0.7973,0.9873,0.0188,133,12/08/21 13:30:49
+Decision Tree Regression,3.1929,1.2361,11.7225,6.2552,0.5968,0.2291,133,12/08/21 13:30:51
+MLP Regression using Relu: 20 hidden layers with 60 nodes per layer,0.3430,0.4996,5.8056,4.1032,0.8042,0.0894,133,12/08/21 13:30:55
