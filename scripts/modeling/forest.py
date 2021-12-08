@@ -49,7 +49,7 @@ def main():
     predictors = predictors.to_numpy()
     target = target.to_numpy()
 
-    logging.warning("starting Decision Tree - good luck.")
+    logging.warning("starting Random Forest Regression - good luck.")
     results = model(
         "Random Forest Regression, where n_estimators="+str(args.ESTIMATORS),
         args.ESTIMATORS, predictors, target)
