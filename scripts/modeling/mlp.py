@@ -28,7 +28,6 @@ args = parser.parse_args()
 def main():
     ''' main execution function '''
     logging.basicConfig(
-        encoding='utf-8',
         level=logging.INFO,
         format="%(levelname)s ::: %(message)s")
 
