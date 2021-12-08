@@ -32,10 +32,13 @@ def main():
     start = time.time()
 
     data_frame = read_csv(PATH)
-    logging.info("read in %s records to data frame",len(data_frame))
+    logging.info(
+        "read in %s records to data frame with %s features",
+        len(data_frame),
+        len(data_frame.columns))
 
     size = len(data_frame) // LIMITER
-    logging.info("will use %s for MLP Classifier", size)
+    logging.info("will use %s records for MLP Classifier", size)
 
     subset = data_frame.iloc[:size,]
     working_subset = clean_copy(subset)
