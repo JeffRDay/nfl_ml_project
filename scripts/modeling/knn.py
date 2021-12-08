@@ -1,19 +1,25 @@
 '''
-Creates a Multilayer Perceptron Classifier (MLPC) model. The
-model is trained using the csv data provided. Evaulation is
-conducted using 5-fold cross validation. The model is serialized
-and saved at the end of execution regardless of performance.
+Creates a K Nearest Neighbor (KNN) model. The model is trained
+using the csv data provided. Evaulation is conducted using
+5-fold cross validation. The model is serialized and saved at
+the end of execution regardless of performance.
 '''
+import argparse
+import csv
 import logging
+import math
 import time
+from datetime import datetime
 
 import pandas as pd
 import numpy as np
-from sklearn import neighbors, model_selection, preprocessing, metrics
+from sklearn import neighbors, model_selection
 
-PATH = "../../dist/20210712_214459_formatted-data.csv"
-LIMITER = 1000
-K_VALUE = 5
+parser = argparse.ArgumentParser()
+parser.add_argument("-l", "--limiter", dest = "LIMITER", type = int, default = 1000, help="rate limiter ::: len(data_size) / limiter")
+parser.add_argument("-k", "--k-value", dest = "K_VALUE", type = int, default = 5, help="set k value in knn")
+parser.add_argument("-p", "--path",dest = "PATH", type = str, default = "../../dist/20210712_214459_formatted-data.csv", help="path to csv data file")
+args = parser.parse_args()
 
 def main():
     ''' main execution function '''
@@ -23,15 +29,16 @@ def main():
         format="%(levelname)s ::: %(message)s")
 
     logging.info("starting model.py")
+    logging.info("params LIMITER=%s, K_VALUE=%s, PATH=%s", args.LIMITER, args.K_VALUE, args.PATH)
     start = time.time()
 
-    data_frame = read_csv(PATH)
+    data_frame = read_csv(args.PATH)
     logging.info(
         "read in %s records to data frame with %s features",
         len(data_frame),
         len(data_frame.columns))
 
-    size = len(data_frame) // LIMITER
+    size = len(data_frame) // args.LIMITER
     logging.info("will use %s records for MLP Classifier", size)
 
     subset = data_frame.iloc[:size,]
@@ -44,11 +51,14 @@ def main():
 
     logging.warning("starting KNN Regression - good luck.")
     results = model(
-        "KNN, where K = " +str(K_VALUE),
-        (K_VALUE),predictors, target)
+        "KNN Regressor, where K = " +str(args.K_VALUE),
+        (args.K_VALUE),predictors, target)
 
     logging.info("KNN Regression completed, results:")
     logging.info(results)
+
+    logging.info("updating reports.csv")
+    save("../../runs/report.csv", results)
 
     end = time.time()
     print("executed model.py in :", end-start)
@@ -73,7 +83,7 @@ def model(description, K_VALUE, predictors, target):
     ''' uses 5-fold cross validation to create and save MLPC model '''
     kfold = model_selection.KFold(5, shuffle=True, random_state=2)
 
-    prec, rec, f_score = [], [], []
+    rmse, mse, r2 = [], [], []
 
     for train_idx, test_idx in kfold.split(predictors):
         predictors_train, predictors_test = predictors[train_idx], predictors[test_idx]
@@ -81,20 +91,33 @@ def model(description, K_VALUE, predictors, target):
 
         knn_regression = neighbors.KNeighborsRegressor(n_neighbors=K_VALUE, weights='uniform')
 
-        # with ignore_warnings(category=UndefinedMetricWarning):
-
         knn_regression.fit(predictors_train, target_train)
 
-        rec += [metrics.recall_score(knn_regression.predict(predictors_test), target_test, average="weighted")]
-        prec += [metrics.precision_score(knn_regression.predict(predictors_test), target_test, average="weighted")]
-        f_score += [metrics.f1_score(knn_regression.predict(predictors_test), target_test, average="weighted")]
+        rmse += [math.sqrt(np.mean((knn_regression.predict(predictors_test) - target_test) ** 2))]
+        mse += [np.mean((knn_regression.predict(predictors_test) - target_test) ** 2)]
+        r2 += [knn_regression.score(predictors_test, target_test)]
 
+    now = datetime.now()
+    current_time = now.strftime("%D %H:%M:%S")
     results = [
         description,
-        "{:.4f} ±{:.4f}".format(np.mean(rec), np.std(rec)), # recall
-        "{:.4f} ±{:.4f}".format(np.mean(prec), np.std(prec)), # precision
-        "{:.4f} ±{:.4f}".format(np.mean(f_score), np.std(f_score)) #f_score (f1)
+        "{:.4f}".format(np.mean(rmse)), # rmse
+        "{:.4f}".format(np.std(rmse)), # rmse variance
+        "{:.4f}".format(np.mean(mse)), # mse
+        "{:.4f}".format(np.std(mse)), # mse variance
+        "{:.4f}".format(np.mean(r2)), #r2
+        "{:.4f}".format(np.std(r2)), #r2 variance
+        "{}".format(len(predictors)), #num records analyzed
+        "{}".format(current_time) #time of execution
     ]
     return results
+
+def save(path, contents):
+    # Open file in append mode
+    with open(path, 'a+', newline='\n') as write_obj:
+        # Create a writer object from csv module
+        csv_writer = csv.writer(write_obj)
+        # Add contents of list as last row in the csv file
+        csv_writer.writerow(contents)
 
 main()

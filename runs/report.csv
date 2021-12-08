@@ -1,0 +1,5 @@
+description,rmse,rmse_variance,mse,mse_variance,r2,r2_variance,num_records_analyzed,time
+
+"Random Forest Regression, where n_estimators=100",1.9935,0.5905,4.3227,2.5661,0.8722,0.0333,200,12/08/21 06:15:39
+"Random Forest Regression, where n_estimators=100",1.8983,0.5386,3.8938,2.2520,0.8838,0.0280,200,12/08/21 06:16:08
+"Random Forest Regression, where n_estimators=100",1.8930,0.5638,3.9013,2.3709,0.8841,0.0327,200,12/08/21 06:16:30
