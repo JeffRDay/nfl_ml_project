@@ -1,0 +1,9 @@
+description,rmse,rmse_variance,mse,mse_variance,r2,r2_variance,num_records_analyzed,time
+"Random Forest Regression, where n_estimators=25",1.9673,0.5504,4.1731,2.2666,0.8678,0.0604,200,12/08/21 06:45:46
+"Random Forest Regression, where n_estimators=50",1.9125,0.5166,3.9246,2.2108,0.8813,0.0277,200,12/08/21 06:45:50
+"Random Forest Regression, where n_estimators=100",1.9009,0.5819,3.9519,2.4721,0.8843,0.0299,200,12/08/21 06:45:53
+"Random Forest Regression, where n_estimators=150",1.8891,0.5056,3.8244,1.9968,0.8826,0.0363,200,12/08/21 06:45:57
+"Random Forest Regression, where n_estimators=200",1.9023,0.5105,3.8792,2.0480,0.8817,0.0329,200,12/08/21 06:46:01
+"Random Forest Regression, where n_estimators=250",1.8905,0.5240,3.8487,2.1517,0.8834,0.0330,200,12/08/21 06:46:06
+"Random Forest Regression, where n_estimators=300",1.9094,0.5062,3.9021,2.0391,0.8806,0.0339,200,12/08/21 06:46:11
+"Random Forest Regression, where n_estimators=350",1.9250,0.5738,4.0350,2.4240,0.8794,0.0375,200,12/08/21 06:46:16
