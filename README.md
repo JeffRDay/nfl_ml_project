@@ -50,13 +50,13 @@ of note: Jupyter Notebooks must be executed outside of the dev environment (i.e.
 
 ## Executing scripts
 
-This project uses Go to pre-process the raw data located in `/data/raw`, because we value our time. To execute the go script:
+This project uses Go to pre-process the raw data located in `/data/raw`. To execute the go script:
 
 ### Download the latest release
 
 1. Download latest release for your system architecture from [releases](https://github.com/JeffRDay/nfl_ml_project/releases)
 
-NOTE: Due to resource limitations, only able to text on 64-bit linux and windows operating systems.
+NOTE: Due to resource limitations, we are only able to test on 64-bit linux and windows operating systems.
 
 2. copy the executable into `/code/pre_processing`. This **MUST** be done. The script is dependent on the file structure of this repo at this time.
 
