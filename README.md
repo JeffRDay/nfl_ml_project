@@ -38,15 +38,13 @@ Fantasy football is a multi-billion-dollar industry where individuals from acros
 1. Install VS Code ([link](https://code.visualstudio.com/Download))
 2. Follow Instructions for Remote Containers ([link](https://code.visualstudio.com/docs/remote/containers))
 3. Clone this repository ([clone link](https://github.com/JeffRDay/nfl_ml_project.git))
-4. open `nfl_ml_project` directory in VS Code
-5. if not prompted, press F1 (if windows) or otherwise open command palette.
-6. type `remote-containers`
-7. select `Remote-Containers: Open Folder in Container`
-8. click `open`
+4. Open `nfl_ml_project` directory in VS Code
+5. If not prompted, press F1 (if windows) or otherwise open command palette.
+6. Type `remote-containers`
+7. Select `Remote-Containers: Open Folder in Container`
+8. Click `open`
 9. VS Code should launch the development environment
-10. contact the project team if any issues persist
-
-of note: Jupyter Notebooks must be executed outside of the dev environment (i.e., on the local desktop. The dev environment supports .go, .py, and testing with mongoDb).
+10. Contact the project team if any issues persist
 
 ## Executing scripts
 
