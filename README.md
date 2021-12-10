@@ -69,6 +69,12 @@ if linux:
 
 if windows: double click on the applicable `*.exe`.
 
+### Use the executables in the source code project
+
+1. cd to `/code/pre_processing` and execute the executable for your system architecture.
+
+results will be output to `/data/clean_formatted` directory.
+
 ### Follow the development environment setup instructions
 
 cd into `/code/pre-processing`
