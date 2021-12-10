@@ -31,7 +31,7 @@ Fantasy football is a multi-billion-dollar industry where individuals from acros
 
 ## Machine Learning Pipeline
 
-![ML Pipeline](imgs/no_background_CS5644_ML_Pipeline-Detailed.drawio.png)
+![ML Pipeline](imgs/CS5644_ML_Pipeline-Detailed.drawio.png)
 
 ## Development Environment Setup
 
@@ -54,11 +54,20 @@ This project uses Go to pre-process the raw data located in `/data/raw`, because
 
 ### Download the latest release
 
-1. Download latest release for your system architecture from [XXX]()
+1. Download latest release for your system architecture from [releases](https://github.com/JeffRDay/nfl_ml_project/releases)
 
 NOTE: Due to resource limitations, only able to text on 64-bit linux and windows operating systems.
 
 2. copy the executable into `/code/pre_processing`. This **MUST** be done. The script is dependent on the file structure of this repo at this time.
+
+3. execute the binary. results will be output to `/data/clean_formatted` directory.
+
+if linux:
+```bash
+./<binary name>
+```
+
+if windows: double click on the applicable `*.exe`.
 
 ### Follow the development environment setup instructions
 
@@ -71,3 +80,4 @@ run the go script
 ```bash
 go run ./...
 ```
+results will be output to `/data/clean_formatted` directory.
