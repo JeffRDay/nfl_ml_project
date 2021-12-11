@@ -50,7 +50,7 @@ Fantasy football is a multi-billion-dollar industry where individuals from acros
 
 This project uses Go to pre-process the raw data located in `/data/raw`. To execute the go script:
 
-### Download the latest release
+### OPTION 1: Download the latest release
 
 1. Download latest release for your system architecture from [releases](https://github.com/JeffRDay/nfl_ml_project/releases)
 
@@ -67,21 +67,25 @@ if linux:
 
 if windows: double click on the applicable `*.exe`.
 
-### Use the executables in the source code project
+### OPTION 2: Use the executables in the source code project
 
 1. cd to `/code/pre_processing` and execute the executable for your system architecture.
 
 results will be output to `/data/clean_formatted` directory.
 
-### Follow the development environment setup instructions
+### OPTION 3: Follow the development environment setup instructions
 
-cd into `/code/pre-processing`
+After completing the development environment setup instructions, cd into `/code/pre-processing`
+
 ```bash
 cd code/pre-processing
 ```
 
-run the go script
+Copy/paste the command below into your terminal of choice to execute the go script.
 ```bash
 go run ./...
 ```
+
+*note - do NOT use `go run go-main.go`. This is a multi-file script requiring the execution of the command above rather than running a specific file.*
+
 results will be output to `/data/clean_formatted` directory.
